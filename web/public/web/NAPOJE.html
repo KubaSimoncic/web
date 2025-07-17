@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Moderní bistro s čerstvými bagetami, sendviči a chlebíčky na pražském Florenci.">
+        <meta name="keywords" content="bistro, Florenc, chlebíčky, sendviče, bagety, jídlo, občerstvení">
+                
+        <link rel="icon" href="favicon.ico" sizes="any">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
+
+        <title>Bistro Flo-renc | Nápoje</title>
+        <style>
+            body {  margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                color:#0F3825
+            }
+            header {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 20px;
+                background: #0F3825;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            .logo {
+                    margin-left: 20px;
+            }
+            .logo img {
+                height: 120px;
+            }
+            #menu-toggle {
+                display: none;
+                font-size: 30px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #F5F1E3;
+            }
+            nav {
+                display: flex;
+                align-items: center;
+                margin-right: 150px;
+            }
+            nav a {
+                color: #F5F1E3;
+                text-decoration: none;
+                margin: 0 15px;
+                font-size: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+                transition: color 0.3s;
+                text-align: center;
+            }
+            nav a:hover {
+                color: #d4a373;
+                text-decoration: underline;
+            }
+            span {
+                width: 50px;
+            }
+            @media (max-width: 768px) {
+                .logo img {
+                    height: 80px;
+                }
+                #menu-toggle {
+                    display: block;
+                    position: absolute;
+                    margin-right: 30px;
+                    top: 15px;
+                    right: 20px;
+                    margin-left: 20px;
+                }   
+                nav {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100px;
+                    right: 0px;
+                    background: #0F3825;
+                    width: 100%;
+                    text-align: center;
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                }
+                nav a {
+                    padding: 15px;
+                    display: block;
+                    color: #F5F1E3;
+                }
+                nav.show {
+                    display: flex;
+                }
+                }
+                footer {
+                    padding: 50px;
+                    max-width: 800px;
+                    margin: 0 auto;
+                    background-color: #ffffff;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h1 {
+                        font-size: 60px;
+                        font-weight: bold;
+                        margin-bottom: 60px;
+                        text-align: center;
+                        color: #0F3825;
+                }
+                h2 {
+                    border-bottom: 2px;
+                    padding-bottom: 5px;
+                    font-size: 35px;
+                    margin-top: 50px;
+                    color: #1E5F3F;
+                }
+                h3 {
+                    font-size: 30px;
+                    margin-top: 50px;
+                    margin-bottom: 0px;
+                }
+                h5 {
+                    text-align: center;
+                    font-size: 25px;
+                }
+                .menu-section {
+                    margin-bottom: 20px;
+                }
+                .menu-item {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    padding: 10px 0;
+                    border-bottom: 1px solid #000000;
+                }
+                .menu-item div {
+                    flex: 1;
+                    min-width: 0;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+                .menu-item:last-child {
+                    border-bottom: none;
+                }
+                .menu-item h4 {
+                    margin: 0;
+                    font-size: 18px;
+                }
+                .menu-item p {
+                    margin: 5px 0 0 0;
+                    font-size: 14px;
+                    color: #666;
+                    flex-basis: 100%;
+                    display: block;
+                    white-space: pre-wrap;
+                }
+                @media (max-width: 600px) {
+                    .menu-item {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                    .menu-item span {
+                        white-space: nowrap;
+                        font-weight: bold;
+                        text-align: right;
+                        margin-top: 5px;
+                        margin-left: auto;
+                        margin-right: 30px;
+                    }}
+                    .sipka img {
+                width: 50px;
+                height: auto;
+                }
+            main {
+                padding-top: 170px;
+                text-align: left;
+                padding-left: 20px;
+                background-color: #FFFFFF;
+            }
+    </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="LOGO.png" alt="BISTRO FLORENC" loading="lazy">
+                </a>
+            </div>
+            <button id="menu-toggle">☰</button>
+            <nav id="nav-menu">
+                <a href="O_NAS.html">O NÁS</a>
+                <a href="MENU.html">DENNÍ MENU</a>
+                <a href="NASE_NABIDKA.html">NAŠE NABÍDKA</a>
+                <a href="KONTAKT.html">KONTAKT</a>
+                <a href="GALERIE.html">GALERIE</a>
+            </nav>
+        </header>
+        <main>
+            <div class="sipka">
+                <a href="NASE_NABIDKA.html">
+                    <img src="ŠIPKA.png" alt="ZPĚT" loading="lazy">
+                </a>
+            </div>
+        </main>
+        <footer>
+            <h1>NÁPOJOVÝ LÍSTEK</h1>
+            <section class="menu-section">
+                <div class="menu-item">
+                    <div>
+                        <h4>Točená kofola 0,3l / 0,5l</h4>
+                    </div>
+                    <span>40/55Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Točená malinovka 0,3l / 0,5l</h4>
+                    </div>
+                    <span>35/50Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Coca Cola 0,5l</h4>
+                    </div>
+                    <span>45 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Coca Cola Zero 0,5l</h4>
+                    </div>
+                    <span>45 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Royal Cola 0,5l</h4>
+                    </div>
+                    <span>45 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Fanta 0,5l</h4>
+                    </div>
+                    <span>45 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Sprite 0,5l</h4>
+                    </div>
+                    <span>45 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Pomerančový džus 0,3l</h4>
+                    </div>
+                    <span>45 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Jablečný džus 0,3l</h4>
+                    </div>
+                    <span>45 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Pilsner Uquell 0,5l</h4>
+                    </div>
+                    <span>65 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Nelkoholický Birel 0,5l</h4>
+                    </div>
+                    <span>55 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Birel Pomelo Grep 0,5l</h4>
+                    </div>
+                    <span>55 Kč</span>
+                </div>
+            </section>
+            <section class="menu-section">
+                 <h2>KÁVA</h2>
+                <div class="menu-item">
+                    <div>
+                        <h4>Espresso</h4>
+                    </div>
+                    <span>55 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Cappuccino</h4>
+                    </div>
+                    <span>65 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Café Latte</h4>
+                    </div>
+                    <span>70 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Espresso Macchiato</h4>
+                    </div>
+                    <span>60 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Double Espresso</h4>
+                    </div>
+                    <span>70 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Flat White</h4>
+                    </div>
+                    <span>75 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Vídeňská káva</h4>
+                    </div>
+                    <span>65 Kč</span>
+                </div>
+            </section>
+            <section class="menu-section">
+                <h2>LIKÉRY KE KÁVĚ</h2>
+                <div class="menu-item">
+                    <div>
+                        <h4>Amaretto di Sarrono 0,04l</h4>
+                        <p>sladký mandlový likér- perfektní k silné černé kávě</p>
+                    </div>
+                    <span>70 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Bailes Irish Cream 0,04l</h4>
+                        <p>Irský krémový likér na bázi whisky a smetany- velmi oblíbený k espressu nebo latté</p>
+                    </div>
+                    <span>70 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Kahlúa 0,04l</h4>
+                        <p>kávový likér z Mexika- chuť kávy ještě zvýrazní</p>
+                    </div>
+                    <span>70 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Drambuie 0,04l</h4>
+                        <p>skotský likér s medem a bylinkami- výborný k tmavé kávě</p>
+                    </div>
+                    <span>75 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Frangelico 0,04l</h4>
+                        <p>oříškový likér z lískových ořechů- ideální ke sladké kávě nebo dezertům</p>
+                    </div>
+                    <span>70 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Grand Marnier 0,04l</h4>
+                        <p>francouzský pomerančový likér- přidává kávě jemnou citrusovou notu</p>
+                    </div>
+                    <span>80 Kč</span>
+                </div>
+            </section>
+            <section class="menu-section">
+                <h2>DOMÁCÍ LIMONÁDY</h2>
+                <div class="menu-item">
+                    <div>
+                        <h4>Malinová limonáda 0,4l</h4>
+                    </div>
+                    <span>60 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Bezinková limonáda 0,4l</h4>
+                    </div>
+                    <span>60 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Limonáda z dračího ovoce a malin 0,4l</h4>
+                    </div>
+                    <span>60 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Rakytníková limonáda 0,4l</h4>
+                    </div>
+                    <span>60 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Citronáda 0,4l</h4>
+                    </div>
+                    <span>60 Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Zázvorová limonáda 0,4l</h4>
+                    </div>
+                    <span>60 Kč</span>
+                </div>
+                <h5><i>PODÁVÁME S LEDEM A MÁTOU</i></h5>
+                <h5><i>MOŽNO PŘIPRAVIT I V NEPRELIVÉ VARIANTĚ</i></h5>
+            </section>
+        </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+        const menuButton = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+    
+        if (!menuButton || !navMenu) {
+            console.error("❌ Element menu-toggle nebo nav-menu nebyl nalezen!");
+            return;
+        }
+    
+        menuButton.addEventListener('click', function() {
+            navMenu.classList.toggle('show');
+            console.log("✅ Menu přepnuto!");
+        });
+    });
+        </script>
+    </body>
+</html>

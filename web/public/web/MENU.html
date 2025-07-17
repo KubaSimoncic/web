@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Moderní bistro s čerstvými bagetami, sendviči a chlebíčky na pražském Florenci.">
+        <meta name="keywords" content="bistro, Florenc, chlebíčky, sendviče, bagety, jídlo, občerstvení">
+                
+        <link rel="icon" href="favicon.ico" sizes="any">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
+
+        <title>Bistro Flo-renc | Denní menu</title>
+        <style>
+            body {  margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                color:#0F3825
+            }
+            header {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 20px;
+                background: #0F3825;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            .logo {
+                    margin-left: 20px;
+            }
+            .logo img {
+                height: 120px;
+            }
+            #menu-toggle {
+                display: none;
+                font-size: 30px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #F5F1E3;
+            }
+            nav {
+                display: flex;
+                align-items: center;
+                margin-right: 150px;
+            }
+            nav a {
+                color: #F5F1E3;
+                text-decoration: none;
+                margin: 0 15px;
+                font-size: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+            nav a:hover {
+                color: #d4a373;
+                text-decoration: underline;
+            }
+            span {
+                width: 50px;
+                color: #000000;
+            }
+            @media (max-width: 768px) {
+                .logo img {
+                    height: 80px;
+                }
+                #menu-toggle {
+                    display: block;
+                    position: absolute;
+                    margin-right: 30px;
+                    top: 15px;
+                    right: 20px;
+                }  
+                nav {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100px;
+                    right: 0px;
+                    background: #0F3825;
+                    width: 100%;
+                    text-align: center;
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                }
+                nav a {
+                    padding: 15px;
+                    display: block;
+                    color: #F5F1E3;
+                }
+                nav.show {
+                    display: flex;
+                }
+                }
+                main {
+                    background-color: #FFFFFF;
+                }
+                footer{
+                    padding-top: 140px;
+                    max-width: 768px;
+                    margin: 0 auto;
+                    background-color: #FFFFFF;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    padding-left: 50px;
+                    padding-right: 50px;    
+                }
+                h1 {
+                        font-size: 60px;
+                        font-weight: bold;
+                        margin-bottom: 60px;
+                        text-align: center;
+                        color: #0F3825;
+                }
+                h2 {
+                    border-bottom: 2px;
+                    padding-bottom: 5px;
+                    font-size: 35px;
+                    margin-top: 50px;
+                    color: #0F3825
+                }
+                h3 {
+                    font-size: 30px;
+                    margin-top: 30px;
+                    margin-bottom: 0px;
+                }
+                h4 {
+                    color: #000000;
+                }
+                h5 {
+                    text-align: center;
+                    font-size: 25px;
+                }
+                .menu-section {
+                    margin-bottom: 20px;
+                }
+                .menu-item {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    padding: 10px 0;
+                    border-bottom: 1px solid #000000;
+                }
+                .menu-item div {
+                    flex: 1;
+                    min-width: 0;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+                .menu-item:last-child {
+                    border-bottom: none;
+                }
+                .menu-item h4 {
+                    margin: 0;
+                    font-size: 18px;
+                }
+                .menu-item p {
+                    margin: 5px 0 0 0;
+                    font-size: 14px;
+                    color: #000000;
+                    flex-basis: 100%;
+                    display: block;
+                    white-space: pre-wrap;
+                }
+                .menu-item span {
+                    font-weight: bold;
+                }
+                @media (max-width: 600px) {
+                    .menu-item {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                    .menu-item span {
+                        white-space: nowrap;
+                        font-weight: bold;
+                        text-align: right;
+                        margin-top: 5px;
+                        margin-left: auto;
+                    }}
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="LOGO.png" alt="BISTRO FLORENC" loading="lazy">
+                </a>
+            </div>
+            <button id="menu-toggle">☰</button>
+            <nav id="nav-menu">
+                <a href="O_NAS.html">O NÁS</a>
+                <a href="MENU.html">DENNÍ MENU</a>
+                <a href="NASE_NABIDKA.html">NAŠE NABÍDKA</a>
+                <a href="KONTAKT.html">KONTAKT</a>
+                <a href="GALERIE.html">GALERIE</a>
+            </nav>
+        </header>
+        <footer>
+            <section class="menu-section">
+                <h3>MALÁ POLÉVKA K HLAVNÍMU JÍDLU- 250ml</h3>
+                <div class="menu-item">
+                    <div>
+                        <h4>Fazolová polévka s uzeninou a bramborem</h4>
+                        <p></p>
+                    </div>
+                    <span>30Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Bramborová polévka</h4>
+                        <p></p>
+                    </div>
+                    <span>30Kč</span>
+                    </div>
+                <h3>HLAVNÍ JÍDLA</h3>
+                <div class="menu-item">
+                    <div>
+                        <h4>Pečené kuřecí stehno s dijonskou omáčkou a pečená jasmínová rýže</h4>
+                        <p></p>
+                    </div>
+                    <span>165Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Špikovaná vepřová kýta na smetaně a domácí houskový knedlík</h4>
+                        <p></p>
+                    </div>
+                    <span>165Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Uzená vepřová krkovička, červené zelí a bramborový knedlík</h4>
+                        <p></p>
+                    </div>
+                    <span>165Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Špagety aglio olio e peperoncino s parmazánem</h4>
+                        <p></p>
+                    </div>
+                    <span>165Kč</span>
+                </div>
+                <h3>STÁLÁ NABÍDKA</h3>
+                <div class="menu-item">
+                    <div>
+                        <h4>Hovězí guláš s cibulkou a beraním rohem, domácí houskový knedlík</h4>
+                        <p></p>
+                    </div>
+                    <span>175Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Kuřecí řízek, bramborový salát a citron</h4>
+                        <p></p>
+                    </div>
+                    <span>165Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Smažený sýr, hranolky a tatarská omáčka</h4>
+                        <p></p>
+                    </div>
+                    <span>165Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Bacon Cheeseburger (180g grilované hovězí maso, sýr čedar, majonéza, plátky rajčat, cibulka a salát v sezamové housce), podáváme s hranolkami</h4>
+                        <p></p>
+                    </div>
+                    <span>255Kč</span>
+                </div>
+                <h3>VELKÁ POLÉVKA OBJEDNANÁ SAMOSTATNĚ-500ml</h3>
+                <div class="menu-item">
+                    <div>
+                        <h4>Fazolová polévka s uzeninou a bramborem nebo bramborová polévka</h4>
+                        <p></p>
+                    </div>
+                    <span>75Kč</span>
+                </div>
+                <h3>ZVÝHODNĚNÉ NÁPOJE K HLAVNÍMU JÍDLU</h3>
+                <div class="menu-item">
+                    <div>
+                        <h4>Točená malinovka 0,3/0,5l</h4>
+                        <p></p>
+                    </div>
+                    <span>30/45Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Točená kofola 0,3/0,5l</h4>
+                        <p></p>
+                    </div>
+                    <span>35/50Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Domácí limonády (bezinka, malina, zázvor, citronáda)</h4>
+                        <p></p>
+                    </div>
+                    <span>55Kč</span>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <h4>Kohoutková voda s citronem, mátou a ledem</h4>
+                        <p></p>
+                    </div>
+                    <span>25Kč</span>
+                </div>
+                <h4><i> Nabídka je platná v pondělí 14.7. od 10:30 do zavírací hodiny nebo do vyprodání</i></h4>
+            </section>
+        </footer>
+        <script>
+            document.getElementById('menu-toggle').addEventListener('click', function() {
+                document.getElementById('nav-menu').classList.toggle('show');
+            });
+        </script>
+    </body>
+</html>
